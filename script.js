@@ -68,8 +68,13 @@ document.getElementById('resultsForm').addEventListener('submit', async function
             resultsTable.classList.add('d-none');
             noResults.classList.remove('d-none');
         }
+
+        // Desplazarse a la sección de resultados
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
     } catch (error) {
         console.error('Error:', error);
         alert('Hubo un error al procesar la solicitud. Intenta de nuevo.');
+        // Desplazarse a la sección de resultados incluso si hay un error
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
     }
 });
